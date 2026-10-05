@@ -108,6 +108,16 @@ td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-
 .note{font-size:13px;color:var(--muted);margin:0;border-left:3px solid var(--accent);padding-left:10px}
 .panel details{font-size:14px}
 
+.doclinks{display:flex;flex-wrap:wrap;gap:8px}
+a.doc{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:5px;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:600;font-size:13.5px;border:1px solid var(--accent)}
+a.doc small{font-family:var(--mono);font-weight:500;font-size:11px;opacity:.85}
+a.doc.ghost{background:transparent;color:var(--accent)}
+a.doc:hover{filter:brightness(1.08)} a.doc:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.doclist{display:grid;gap:8px}
+.drow{display:flex;flex-wrap:wrap;gap:10px 20px;align-items:center;justify-content:space-between;background:var(--surface);border:1px solid var(--line);border-left:6px solid var(--c);border-radius:6px;padding:12px 16px}
+.drow > div:first-child{display:grid;gap:2px;min-width:0}
+.drow > div:first-child span{font-size:13.5px;color:var(--muted)}
+.soon{font-family:var(--mono);font-size:12px;color:var(--muted);border:1px dashed var(--line);border-radius:4px;padding:4px 10px}
 .open{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
 .open summary{font-family:var(--display);font-size:22px;font-weight:600;color:var(--fg)}
 .open ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
@@ -194,36 +204,60 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
       <h3>Energy market</h3>
       <div class="who">Yves</div>
       <span class="where de">Raum 014</span><span class="where en">Room 014</span>
-      <p class="de">Workshop „Europäische Strommärkte: Wie Wind und Sonne den Strompreis machen“, mit zwei Gruppenaufgaben.</p>
-      <p class="en">Workshop “European electricity markets: how wind and sun set the price”, with two group tasks.</p>
+      <p class="de">Workshop „European electricity markets: How wind and sun set the price of power“, mit zwei Gruppenaufgaben. Die Folien sind auf Englisch.</p>
+      <p class="en">Workshop “European electricity markets: How wind and sun set the price of power”, with two group tasks. Slides in English.</p>
+      <div class="doclinks">
+        <a class="doc" href="https://pugu-prog.github.io/windmobile-erasmus/docs/Workshop_European_Electricity_Markets.pdf" target="_blank" rel="noopener"><span class="de">Folien ansehen</span><span class="en">View slides</span> <small>PDF</small></a>
+        <a class="doc ghost" href="https://pugu-prog.github.io/windmobile-erasmus/docs/Workshop_European_Electricity_Markets.pptx" target="_blank" rel="noopener"><span class="de">PowerPoint</span><span class="en">PowerPoint</span> <small>PPTX</small></a>
+      </div>
       <details>
         <summary><span class="de">Details</span><span class="en">Details</span></summary>
         <div class="dbody">
           <div>
-            <h4 class="de">Ablauf und Kürzung</h4><h4 class="en">Structure and shortened versions</h4>
+            <h4 class="de">Ablauf (50 min)</h4><h4 class="en">Agenda (50 min)</h4>
             <div class="tbl"><table>
-              <thead><tr><th class="de">Phase</th><th class="en">Phase</th><th class="n">50</th><th class="n">45</th><th class="n">40</th></tr></thead>
               <tbody>
-                <tr><td><span class="de">Einstieg: Schätzfrage negative Strompreise</span><span class="en">Warm-up: guess the negative-price hours</span></td><td class="n">5</td><td class="n">3</td><td class="n">3</td></tr>
-                <tr><td><span class="de">Input 1: Markt, Handel, Merit-Order</span><span class="en">Input 1: market, trading, merit order</span></td><td class="n">11</td><td class="n">10</td><td class="n">9</td></tr>
-                <tr><td><span class="de">Gruppenaufgabe 1: Merit-Order bauen</span><span class="en">Group task 1: build a merit order</span></td><td class="n">10</td><td class="n">10</td><td class="n">9</td></tr>
-                <tr><td><span class="de">Input 2: Erneuerbare im Markt</span><span class="en">Input 2: renewables in the market</span></td><td class="n">7</td><td class="n">6</td><td class="n">5</td></tr>
-                <tr><td><span class="de">Gruppenaufgabe 2: Rollenspiel „Ein Sonntag, zwei Preise“</span><span class="en">Group task 2: role play “One Sunday, two prices”</span></td><td class="n">14</td><td class="n">13</td><td class="n">11</td></tr>
-                <tr><td><span class="de">Abschluss: drei Kernbotschaften</span><span class="en">Wrap-up: three key messages</span></td><td class="n">3</td><td class="n">3</td><td class="n">3</td></tr>
+                <tr><td class="n">0–5</td><td><span class="de">Einstieg: Schätzfrage zu negativen Strompreisen</span><span class="en">Warm-up: guessing question on negative prices</span></td></tr>
+                <tr><td class="n">5–16</td><td><span class="de">Input 1: Markt, Handelsplätze, Merit-Order</span><span class="en">Input 1: market, trading venues, merit order</span></td></tr>
+                <tr><td class="n">16–26</td><td><span class="de">Gruppenaufgabe 1: eigene Merit-Order bauen</span><span class="en">Group task 1: build your own merit order</span></td></tr>
+                <tr><td class="n">26–33</td><td><span class="de">Input 2: Erneuerbare im Markt, Grenzen, Ausblick</span><span class="en">Input 2: renewables in the market, limits, outlook</span></td></tr>
+                <tr><td class="n">33–47</td><td><span class="de">Gruppenaufgabe 2: Rollenspiel „Ein Sonntag, zwei Preise“</span><span class="en">Group task 2: role play “One Sunday, two prices”</span></td></tr>
+                <tr><td class="n">47–50</td><td><span class="de">Abschluss: drei Kernbotschaften</span><span class="en">Wrap-up: three key messages</span></td></tr>
               </tbody>
             </table></div>
-            <p class="de" style="margin-top:6px">Minuten. Die zehn „Hintergrund“-Folien entfallen in allen Fassungen.</p>
-            <p class="en" style="margin-top:6px">Minutes. The ten “background” slides are dropped in every version.</p>
+            <p class="de" style="margin-top:6px">In den kürzeren Runden (40–45 min) setzt Yves die Schwerpunkte selbst.</p>
+            <p class="en" style="margin-top:6px">In the shorter rounds (40–45 min), Yves sets the priorities himself.</p>
+          </div>
+          <div>
+            <h4 class="de">Inhalte</h4><h4 class="en">Contents</h4>
+            <ul class="de"><li>Ein Strommarkt für 27 Länder; Deutschland und Luxemburg bilden eine gemeinsame Preiszone</li><li>Vier Märkte bis zur Lieferung: Termin, Day-Ahead, Intraday, Regelenergie</li><li>Merit-Order: Das teuerste noch benötigte Kraftwerk setzt den Preis für alle</li><li>Mehr Wind, niedrigerer Preis (Merit-Order-Effekt)</li><li>2025: Wind und Solar liefern 30,1 % des EU-Stroms, erstmals mehr als alle fossilen Kraftwerke</li><li>573 Stunden mit negativem Strompreis in Deutschland 2025</li><li>Vorteile und Grenzen des gemeinsamen Marktes, Ausblick auf ein komplett erneuerbares System</li></ul>
+            <ul class="en"><li>One electricity market for 27 countries; Germany and Luxembourg share one bidding zone</li><li>Four markets before delivery: forwards, day-ahead, intraday, balancing</li><li>Merit order: the most expensive plant still needed sets the price for everyone</li><li>More wind, lower price (merit-order effect)</li><li>2025: wind and solar supply 30.1% of EU power, for the first time more than all fossil plants</li><li>573 hours with a negative power price in Germany in 2025</li><li>Benefits and limits of the common market, outlook on a fully renewable system</li></ul>
+          </div>
+          <div>
+            <h4 class="de">Gruppenaufgabe 1: Merit-Order</h4><h4 class="en">Group task 1: merit order</h4>
+            <div class="tbl"><table>
+              <thead><tr><th><span class="de">Szenario</span><span class="en">Scenario</span></th><th><span class="de">Preissetzer</span><span class="en">Price setter</span></th><th class="n">€/MWh</th></tr></thead>
+              <tbody>
+                <tr><td><span class="de">A · Windstiller Winterabend</span><span class="en">A · Calm winter evening</span></td><td>Gas</td><td class="n">110</td></tr>
+                <tr><td><span class="de">B · Windiger Sommermittag</span><span class="en">B · Windy summer midday</span></td><td><span class="de">Kernkraft</span><span class="en">Nuclear</span></td><td class="n">10</td></tr>
+                <tr><td><span class="de">C · Sonniger, windiger Sonntag</span><span class="en">C · Sunny, windy Sunday</span></td><td><span class="de">Wind / Solar</span><span class="en">Wind / solar</span></td><td class="n">≤ 0</td></tr>
+              </tbody>
+            </table></div>
+          </div>
+          <div>
+            <h4 class="de">Gruppenaufgabe 2: Rollenspiel</h4><h4 class="en">Group task 2: role play</h4>
+            <p class="de">Ein Sonntag mit zwei Preisen: um 13 Uhr −50 €/MWh (Strom im Überfluss), um 19 Uhr 180 €/MWh (Strom knapp). Jede Gruppe spielt eine Rolle und rechnet aus, was sie verdient oder spart: Solarpark, Batteriespeicher, Stahlwerk, Haushalt mit E-Auto, Netzbetreiber.</p>
+            <p class="en">One Sunday, two prices: at 1 pm −€50/MWh (power in abundance), at 7 pm €180/MWh (power is scarce). Each group plays a role and works out what it earns or saves: solar farm, battery storage, steelworks, household with an electric car, grid operator.</p>
+          </div>
+          <div>
+            <h4 class="de">Drei Kernbotschaften</h4><h4 class="en">Three key messages</h4>
+            <ol class="de"><li>Das teuerste benötigte Kraftwerk setzt den Preis für alle.</li><li>Wind und Solar bieten fast zum Nullpreis und drücken so den Preis.</li><li>Der gemeinsame Markt macht Erneuerbare günstiger und sicherer, wenn Netze und Flexibilität mitwachsen.</li></ol>
+            <ol class="en"><li>The most expensive plant that is needed sets the price for everyone.</li><li>Wind and solar bid at almost zero and so push the price down.</li><li>The common market makes renewables cheaper and more secure, if grids and flexibility grow with them.</li></ol>
           </div>
           <div>
             <h4 class="de">Organisation</h4><h4 class="en">Organisation</h4>
-            <ul class="de"><li>Bei 10 Schülern 2 bis 3 Gruppen à 3 bis 5</li><li>Gleiche Gruppen für beide Aufgaben</li><li>Material: Beamer, Papier und Stift pro Gruppe</li></ul>
-            <ul class="en"><li>With 10 students, 2 to 3 groups of 3 to 5</li><li>Same groups for both tasks</li><li>Materials: projector, paper and pen per group</li></ul>
-          </div>
-          <div>
-            <h4 class="de">Brücke zum Windrad</h4><h4 class="en">Link to the turbine</h4>
-            <p class="de">Die Folie „Mehr Wind, niedrigerer Preis“ zeigt den Merit-Order-Effekt. Die Energy tour im selben Raum kann direkt daran anknüpfen.</p>
-            <p class="en">The slide “More wind, lower price” shows the merit-order effect. The energy tour in the same room can pick up right there.</p>
+            <ul class="de"><li>Bei 10 Schülern 2 bis 3 Gruppen à 3 bis 5, gleiche Gruppen für beide Aufgaben</li><li>Material: Beamer, Papier und Stift pro Gruppe, kein Taschenrechner nötig</li><li>Brücke zum Windrad: Die Folie „More wind, lower price“ leitet direkt zur Energy tour über</li></ul>
+            <ul class="en"><li>With 10 students, 2 to 3 groups of 3 to 5, same groups for both tasks</li><li>Materials: projector, paper and a pen per group, no calculator needed</li><li>Link to the turbine: the slide “More wind, lower price” leads straight into the energy tour</li></ul>
           </div>
         </div>
       </details>
@@ -324,6 +358,16 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     </div>
   </section>
 
+  <h2 class="sec de">Unterlagen</h2><h2 class="sec en">Documents</h2>
+  <section class="doclist">
+    <div class="drow" style="--c:var(--mkt)"><div><b>Energy market</b><span class="de">Folien von Yves, Stand 05.10.2026</span><span class="en">Slides by Yves, as of 5 Oct 2026</span></div><div class="doclinks">
+        <a class="doc" href="https://pugu-prog.github.io/windmobile-erasmus/docs/Workshop_European_Electricity_Markets.pdf" target="_blank" rel="noopener"><span class="de">Folien ansehen</span><span class="en">View slides</span> <small>PDF</small></a>
+        <a class="doc ghost" href="https://pugu-prog.github.io/windmobile-erasmus/docs/Workshop_European_Electricity_Markets.pptx" target="_blank" rel="noopener"><span class="de">PowerPoint</span><span class="en">PowerPoint</span> <small>PPTX</small></a>
+      </div></div>
+    <div class="drow" style="--c:var(--fab)"><div><b class="de">Fertigung Rotorblätter</b><b class="en">Rotor blade manufacturing</b><span class="de">Arbeitsblatt und Ablauf</span><span class="en">Worksheet and procedure</span></div><span class="soon de">folgt</span><span class="soon en">coming soon</span></div>
+    <div class="drow" style="--c:var(--tour)"><div><b>Energy tour</b><span class="de">Timeline 20 Jahre Windmobile</span><span class="en">Timeline 20 years of Windmobile</span></div><span class="soon de">folgt</span><span class="soon en">coming soon</span></div>
+  </section>
+
   <details class="open">
     <summary><span class="de">Offene Punkte</span><span class="en">Open points</span></summary>
     <div class="dbody">
@@ -332,7 +376,6 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
         <li><b>Variante wählen:</b> Bei Variante B müssen die Präsentationen der Missionen (9:00–9:30) woanders hin, etwa in die Collaboration time 16:30–17:00.</li>
         <li><b>Formen:</b> Die letzte Vormittagsgruppe endet 12:30, um 13:30 werden die Rohre wieder gebraucht. Zweiten Satz Rohre als Formen vorsehen.</li>
         <li><b>Kernmaterial:</b> Test Balsa gegen Schaumstoff vor dem Workshop abschließen.</li>
-        <li><b>Sprache:</b> Yves' Folien sind auf Deutsch. Für die kroatischen Gäste eine englische Fassung oder englische Erklärungen einplanen.</li>
         <li><b>Plan der Partner:</b> Im Gesamtplan steht „Guy &amp; Yves“. Will und Pol für die Fertigung dort ergänzen.</li>
         <li><b>Helfer:</b> Schüler aus der Windmobile-Gruppe für Fertigung und Schulhof einteilen.</li>
       </ul>
@@ -341,7 +384,6 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
         <li><b>Choose an option:</b> with option B, the mission presentations (9:00–9:30) need another slot, e.g. collaboration time 16:30–17:00.</li>
         <li><b>Moulds:</b> the last morning group ends at 12:30 and the pipes are needed again at 13:30. Plan a second set of pipes as moulds.</li>
         <li><b>Core material:</b> finish the balsa versus foam test before the workshop.</li>
-        <li><b>Language:</b> Yves' slides are in German. Plan an English version or English explanations for the Croatian guests.</li>
         <li><b>Partner schedule:</b> the overall plan says “Guy &amp; Yves”. Add Will and Pol for manufacturing.</li>
         <li><b>Helpers:</b> assign students from the Windmobile group to manufacturing and the schoolyard.</li>
       </ul>
