@@ -148,7 +148,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
 
   <section class="facts">
     <div><span class="k de">Datum</span><span class="k en">Date</span><span class="v de">Mi, 18.11.2026</span><span class="v en">Wed, 18 Nov 2026</span></div>
-    <div><span class="k de">Zeitfenster</span><span class="k en">Time slots</span><span class="v">9:30–12:30 · 13:30–16:30</span></div>
+    <div><span class="k de">Zeitfenster</span><span class="k en">Time slots</span><span class="v">9:00–12:30 · 13:30–16:30</span></div>
     <div><span class="k de">Teilnehmende</span><span class="k en">Participants</span><span class="v de">2 × ca. 20 Schüler</span><span class="v en">2 × approx. 20 students</span></div>
     <div><span class="k de">Räume</span><span class="k en">Rooms</span><span class="v de">Raum 013 · Raum 014 · Schulhof</span><span class="v en">Room 013 · room 014 · schoolyard</span></div>
   </section>
@@ -225,8 +225,8 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
                 <tr><td class="n">47–50</td><td><span class="de">Abschluss: drei Kernbotschaften</span><span class="en">Wrap-up: three key messages</span></td></tr>
               </tbody>
             </table></div>
-            <p class="de" style="margin-top:6px">In den kürzeren Runden (40–45 min) setzt Yves die Schwerpunkte selbst.</p>
-            <p class="en" style="margin-top:6px">In the shorter rounds (40–45 min), Yves sets the priorities himself.</p>
+            <p class="de" style="margin-top:6px">Vormittags hat Yves die vollen 50 min. Nachmittags sind es 45 bzw. 40 min, dort setzt er die Schwerpunkte selbst.</p>
+            <p class="en" style="margin-top:6px">In the morning Yves has the full 50 min. In the afternoon it is 45 or 40 min, and he sets the priorities himself.</p>
           </div>
           <div>
             <h4 class="de">Inhalte</h4><h4 class="en">Contents</h4>
@@ -342,10 +342,6 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
   <section class="days">
     <div class="panel">
       <div class="ph"><h3 class="de">Vormittag</h3><h3 class="en">Morning</h3><span class="span" id="am-span"></span></div>
-      <div class="toggle" role="group" aria-label="Variante">
-        <button type="button" id="vA" aria-pressed="true"><span class="de">Variante A: Yves strafft<small>9:30 – 12:30, Plan bleibt</small></span><span class="en">Option A: Yves shortens<small>9:30 – 12:30, plan unchanged</small></span></button>
-        <button type="button" id="vB" aria-pressed="false"><span class="de">Variante B: grüner Bereich<small>9:00 – 12:30, Präsentationen verschieben</small></span><span class="en">Option B: use green slot<small>9:00 – 12:30, move presentations</small></span></button>
-      </div>
       <div class="grid" id="am"></div>
       <p class="note" id="am-note"></p>
       <details><summary><span class="de">Als Tabelle</span><span class="en">As a table</span></summary><div class="dbody"><div class="tbl" id="am-tbl"></div></div></details>
@@ -373,7 +369,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     <div class="dbody">
       <ul class="de">
         <li><b>Raum 014</b> für den ganzen Mittwoch freimachen lassen, Beamer prüfen. Ansprechperson: Joy Sanchis (?)</li>
-        <li><b>Variante wählen:</b> Bei Variante B müssen die Präsentationen der Missionen (9:00–9:30) woanders hin, etwa in die Collaboration time 16:30–17:00.</li>
+        <li><b>Start 9:00:</b> Die Präsentationen der Missionen (im Gesamtplan 9:00–9:30) brauchen einen anderen Platz, etwa die Collaboration time 16:30–17:00.</li>
         <li><b>Formen:</b> Die letzte Vormittagsgruppe endet 12:30, um 13:30 werden die Rohre wieder gebraucht. Zweiten Satz Rohre als Formen vorsehen.</li>
         <li><b>Kernmaterial:</b> Test Balsa gegen Schaumstoff vor dem Workshop abschließen.</li>
         <li><b>Plan der Partner:</b> Im Gesamtplan steht „Guy &amp; Yves“. Will und Pol für die Fertigung dort ergänzen.</li>
@@ -381,7 +377,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
       </ul>
       <ul class="en">
         <li><b>Room 014:</b> have it cleared for the whole Wednesday and check the projector. Contact: Joy Sanchis (?)</li>
-        <li><b>Choose an option:</b> with option B, the mission presentations (9:00–9:30) need another slot, e.g. collaboration time 16:30–17:00.</li>
+        <li><b>Start 9:00:</b> the mission presentations (9:00–9:30 in the overall plan) need another slot, e.g. collaboration time 16:30–17:00.</li>
         <li><b>Moulds:</b> the last morning group ends at 12:30 and the pipes are needed again at 13:30. Plan a second set of pipes as moulds.</li>
         <li><b>Core material:</b> finish the balsa versus foam test before the workshop.</li>
         <li><b>Partner schedule:</b> the overall plan says “Guy &amp; Yves”. Add Will and Pol for manufacturing.</li>
@@ -397,11 +393,11 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
 const T={
   de:{fab:"Fertigung",mkt:"Energy market",tour:"Energy tour",room:{fab:"Raum 013",mkt:"Raum 014",tour:"014 → Schulhof"},pause:"Pause",chg:"Wechsel",g:"Gruppe",time:"Zeit",
       notes:{A:"Runde 1 hat 90 min, Runde 2 nur 80 min. Yves braucht 45 min, die Energy tour 40 bzw. 30 min.",
-             B:"Zwei gleich lange Runden von 100 min. Yves hat seine vollen 50 min, die Energy tour 45 min. Die Pause rückt auf 10:40–10:50.",
+             B:"Zwei gleich lange Runden von 100 min. Yves hat seine vollen 50 min, die Energy tour 45 min. Pause 10:40–10:50.",
              PM:"Die zweite Runde hat nur 75 min. Yves kürzt auf 40 min, die Energy tour hat 30 min."}},
   en:{fab:"Manufacturing",mkt:"Energy market",tour:"Energy tour",room:{fab:"Room 013",mkt:"Room 014",tour:"014 → yard"},pause:"Break",chg:"Change",g:"Group",time:"Time",
       notes:{A:"Round 1 has 90 min, round 2 only 80 min. Yves needs 45 min, the energy tour 40 or 30 min.",
-             B:"Two equal rounds of 100 min. Yves gets his full 50 min, the energy tour 45 min. The break moves to 10:40–10:50.",
+             B:"Two equal rounds of 100 min. Yves gets his full 50 min, the energy tour 45 min. Break 10:40–10:50.",
              PM:"Round 2 has only 75 min. Yves shortens to 40 min, the energy tour has 30 min."}}
 };
 const C={fab:["var(--fab)","var(--fab-fg)"],mkt:["var(--mkt)","var(--mkt-fg)"],tour:["var(--tour)","var(--tour-fg)"]};
@@ -418,7 +414,7 @@ const PLAN={
      g:[[["fab","13:30","15:00"],["mkt","15:15","15:55"],["tour","16:00","16:30"]],
         [["mkt","13:30","14:15"],["tour","14:20","15:00"],["fab","15:15","16:30"]]],pause:["15:00","15:15"]}
 };
-let lang="de",cur="A";
+let lang="de",cur="B";
 function render(el,p){
   const L=T[lang],s=m(p.start),e=m(p.end),R=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--row"))||11;
   const y=t=>(m(t)-s)/5*R,H=(e-s)/5*R;
@@ -453,18 +449,14 @@ function draw(){
   document.getElementById("am-span").textContent=`${PLAN[cur].start} – ${PLAN[cur].end}`;
   document.getElementById("am-note").textContent=L.notes[cur];
   document.getElementById("pm-note").textContent=L.notes.PM;
-  document.getElementById("vA").setAttribute("aria-pressed",cur==="A");
-  document.getElementById("vB").setAttribute("aria-pressed",cur==="B");
   document.getElementById("lde").setAttribute("aria-pressed",lang==="de");
   document.getElementById("len").setAttribute("aria-pressed",lang==="en");
   document.documentElement.dataset.lang=lang;document.documentElement.lang=lang;
 }
 function save(){try{localStorage.setItem("ws1811",JSON.stringify({lang,cur}))}catch(e){}}
-document.getElementById("vA").onclick=()=>{cur="A";draw();save()};
-document.getElementById("vB").onclick=()=>{cur="B";draw();save()};
 document.getElementById("lde").onclick=()=>{lang="de";draw();save()};
 document.getElementById("len").onclick=()=>{lang="en";draw();save()};
-try{const s=JSON.parse(localStorage.getItem("ws1811")||"{}");if(s.lang==="en")lang="en";if(s.cur==="B")cur="B"}catch(e){}
+try{const s=JSON.parse(localStorage.getItem("ws1811")||"{}");if(s.lang==="en")lang="en";}catch(e){}
 if(location.hash==="#en")lang="en";if(location.hash==="#de")lang="de";
 draw();
 </script>
