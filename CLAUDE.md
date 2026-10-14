@@ -11,7 +11,7 @@ Zweisprachige Planungsseite (DE/EN, Umschalter oben) für den Erasmus-Workshopta
 
 ## Ablauf
 - Zeitfenster 9:00–12:30 (Runden 9:00–10:40 / 10:50–12:30) und 13:30–16:30, je ca. 20 Schüler in zwei Gruppen à ~10; nach der Pause wird getauscht
-- Station 1 – Fertigung Rotorblätter (Will Reiter, Pol Medernach), Raum 013 Werkstatt: Rotorblätter für ein Windrad aus zwei Fahrradfelgen, Sandwich-Bauweise mit Vakuuminfusion: zwei Carbonmatten mit Kern (Balsa oder Schaum, Details folgen); Runde 2 kürzer (75–80 min) mit vorgeschnittenen Matten
+- Station 1 – Fertigung Rotorblätter (Will Reiter, Pol Medernach), Raum 013 Werkstatt: Rotorblätter für ein Windrad aus zwei Fahrradfelgen, Sandwich-Bauweise mit Vakuuminfusion: zwei Carbonmatten mit Kern Lantor Soric SF (1200 mm, Easy Composites); Harz 300 g + 90 g Härter (Fast), 100:30; Runde 2 kürzer (75–80 min) mit vorgeschnittenen Matten
 - Station 2 – Energy market (Yves), Raum 014: Workshop „European electricity markets“, 50 min, zwei Gruppenaufgaben (Merit-Order, Rollenspiel „Ein Sonntag, zwei Preise“)
 - Station 3 – Energy tour (Guy Putz), Raum 014 → Schulhof: Timeline „20 Jahre Windmobile“, mobiles Windrad, C-Rotor
 - Raum 014 ist nie doppelt belegt: dieselbe Gruppe hat erst Yves, dann Guy
@@ -21,7 +21,6 @@ Zweisprachige Planungsseite (DE/EN, Umschalter oben) für den Erasmus-Workshopta
 - Raum 014 für den ganzen Mittwoch freimachen, Beamer prüfen (Ansprechperson Joy Sanchis?)
 - Neuen Platz für die Missions-Präsentationen finden
 - Zweiten Satz Rohre als Formen vorsehen (12:30 → 13:30)
-- Test Balsa vs. Schaumstoff vor dem Workshop abschließen
 - Im Gesamtplan der Partner Will und Pol für die Fertigung ergänzen
 - Helfer aus der Windmobile-Gruppe einteilen
 - Unterlagen „folgt“: Arbeitsblatt Fertigung, Timeline 20 Jahre Windmobile
