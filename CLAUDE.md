@@ -7,6 +7,7 @@ Zweisprachige Planungsseite (DE/EN, Umschalter oben) für den Erasmus-Workshopta
 
 - Live: https://pugu-prog.github.io/windmobile-erasmus/ (GitHub Pages, Branch `main`, `.nojekyll`)
 - `index.html` – die ganze Seite in einer Datei (CSS + JS inline, Logos als eingebettete WebP-Data-URIs). Inhaltlich identisch mit dem Artifact.
+- `media/` – Fotos (Gesichter herausgeschnitten) und Video der Harzinfusion aus dem Vorversuch, in den Fertigungs-Details
 - `docs/` – Folien Energy market von Yves (PDF + PPTX, Stand 05.10.2026), von der Seite verlinkt
 
 ## Ablauf

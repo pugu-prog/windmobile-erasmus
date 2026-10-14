@@ -108,6 +108,10 @@ td.n,th.n{text-align:right;font-family:var(--mono);font-variant-numeric:tabular-
 .note{font-size:13px;color:var(--muted);margin:0;border-left:3px solid var(--accent);padding-left:10px}
 .panel details{font-size:14px}
 
+.media{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.media figure{margin:0;display:grid;gap:4px;align-content:start}
+.media img,.media video{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:4px;background:var(--sunk);display:block}
+.media figcaption{font-size:12.5px;color:var(--muted);line-height:1.35}
 .doclinks{display:flex;flex-wrap:wrap;gap:8px}
 a.doc{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:5px;background:var(--accent);color:var(--accent-fg);text-decoration:none;font-weight:600;font-size:13.5px;border:1px solid var(--accent)}
 a.doc small{font-family:var(--mono);font-weight:500;font-size:11px;opacity:.85}
@@ -179,6 +183,15 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
             <h4 class="de">Arbeitsschritte</h4><h4 class="en">Process steps</h4>
             <ol class="de"><li>Carbonmatten abkleben und zuschneiden</li><li>Carbonmatten und Kern auf Länge schneiden</li><li>Carbonmatte, Kern und zweite Carbonmatte auf das Rohr legen, das als Form dient</li><li>Dichtband anbringen, Vakuumschlauch anschließen</li><li>Vakuumfolie auflegen und abdichten, Pumpe anschließen</li><li>300 g Harz und 90 g Härter (Fast) mischen, Verhältnis 100:30</li><li>Pumpe starten: Das Harz wird in den Aufbau gezogen</li><li>Währenddessen Matten für die nächste Gruppe zuschneiden</li><li>Aushärtung mit Infrarotlampe beschleunigen</li></ol>
             <ol class="en"><li>Tape and cut the carbon fabric</li><li>Cut the carbon mats and the core to length</li><li>Lay carbon mat, core and second carbon mat on the pipe that serves as the mould</li><li>Apply sealant tape, attach the vacuum hose</li><li>Put on and seal the vacuum film, connect the pump</li><li>Mix 300 g resin and 90 g hardener (fast), ratio 100:30</li><li>Start the pump: the resin is drawn into the lay-up</li><li>Meanwhile, cut the mats for the next group</li><li>Speed up curing with an infrared lamp</li></ol>
+          </div>
+          <div>
+            <h4 class="de">Fotos und Video aus dem Vorversuch</h4><h4 class="en">Photos and video from the trial run</h4>
+            <div class="media">
+              <figure><img src="media/carbon-abkleben.jpg" alt="" loading="lazy"><figcaption><span class="de">Carbonmatte abkleben vor dem Zuschneiden</span><span class="en">Taping the carbon mat before cutting</span></figcaption></figure>
+              <figure><img src="media/soric-rohr.jpg" alt="" loading="lazy"><figcaption><span class="de">Kern Lantor Soric SF auf dem Rohr</span><span class="en">Lantor Soric SF core on the pipe</span></figcaption></figure>
+              <figure><img src="media/spruehkleber.jpg" alt="" loading="lazy"><figcaption><span class="de">Kern mit Sprühkleber auf dem Rohr fixieren</span><span class="en">Fixing the core to the pipe with spray adhesive</span></figcaption></figure>
+              <figure><video src="media/infusion.mp4" poster="media/infusion-poster.jpg" controls muted playsinline preload="none"></video><figcaption><span class="de">Harzinfusion: Das Harz fließt in den Aufbau</span><span class="en">Resin infusion: the resin flows into the lay-up</span></figcaption></figure>
+            </div>
           </div>
           <div>
             <h4 class="de">Pro Runde</h4><h4 class="en">Per round</h4>
