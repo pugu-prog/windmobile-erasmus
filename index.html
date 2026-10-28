@@ -125,6 +125,12 @@ a.doc:hover{filter:brightness(1.08)} a.doc:focus-visible{outline:2px solid var(-
 .open{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:14px 16px}
 .open summary{font-family:var(--display);font-size:22px;font-weight:600;color:var(--fg)}
 .open ul{margin:0;padding-left:20px;display:grid;gap:6px;font-size:14px}
+/* Station aufgeklappt: über die ganze Breite, Inhalt in Spalten statt einer langen Liste */
+.st:has(> details[open]){grid-column:1 / -1}
+.st > details[open] > .dbody{grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:18px 28px;align-items:start}
+.st > details[open] > .dbody > div:has(.tbl),.st > details[open] > .dbody > div:has(.media){grid-column:span 2}
+.st > details[open] .media{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
+@media (max-width:760px){.st > details[open] > .dbody > div:has(.tbl),.st > details[open] > .dbody > div:has(.media){grid-column:auto}}
 .opcount{margin-left:auto;font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted)}
 .open summary{display:flex}
 .oplist{list-style:none;padding:0!important;margin:0;display:grid;gap:2px!important}
@@ -512,6 +518,8 @@ document.getElementById("len").onclick=()=>{lang="en";draw();save()};
 try{const s=JSON.parse(localStorage.getItem("ws1811")||"{}");if(s.lang==="en")lang="en";}catch(e){}
 if(location.hash==="#en")lang="en";if(location.hash==="#de")lang="de";
 draw();
+/* Station aufklappen: Station oben ins Bild holen */
+document.querySelectorAll(".st > details").forEach(d=>d.addEventListener("toggle",()=>{if(d.open)d.closest(".st").scrollIntoView({behavior:"smooth",block:"start"})}));
 /* Offene Punkte: abhakbar und ergänzbar, gespeichert online (Cloudflare Worker + D1 "windmobile-punkte").
    Lesen ist offen, Ändern braucht den Teamcode (einmal pro Gerät, bleibt im Browser). */
 (()=>{
