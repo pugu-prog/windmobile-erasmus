@@ -131,6 +131,45 @@ a.doc:hover{filter:brightness(1.08)} a.doc:focus-visible{outline:2px solid var(-
 .st > details[open] > .dbody > div:has(.tbl),.st > details[open] > .dbody > div:has(.media){grid-column:span 2}
 .st > details[open] .media{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
 @media (max-width:760px){.st > details[open] > .dbody > div:has(.tbl),.st > details[open] > .dbody > div:has(.media){grid-column:auto}}
+/* Schritt-Modus: Anleitung Schritt für Schritt, bildschirmfüllend */
+.stepbtn{justify-self:start;font:600 14px var(--body);padding:9px 16px;border-radius:5px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);cursor:pointer}
+.stepbtn:focus-visible,.sm button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.sm{position:fixed;inset:0;z-index:50;background:var(--bg);color:var(--fg);display:grid;grid-template-rows:auto 1fr auto;padding:max(16px,env(safe-area-inset-top)) 20px max(16px,env(safe-area-inset-bottom))}
+.sm[hidden]{display:none!important}
+.sm-top{display:flex;gap:12px;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);padding-bottom:10px}
+.sm-title{font-family:var(--display);font-weight:600;font-size:20px}
+.sm-top .r{display:flex;gap:8px}
+.sm-top button{font:500 13px var(--mono);padding:7px 12px;border:1px solid var(--line);border-radius:5px;background:var(--surface);color:var(--fg);cursor:pointer}
+.sm-main{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:28px 40px;align-items:center;overflow:auto;padding:20px 0;max-width:1400px;width:100%;margin:0 auto}
+.sm-num{font-family:var(--mono);font-size:15px;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.sm-h{font-family:var(--display);font-weight:700;font-size:clamp(34px,5vw,64px);line-height:1.02;margin:6px 0 10px;text-wrap:balance}
+.sm-size{display:inline-block;font-family:var(--mono);font-size:clamp(18px,2vw,24px);padding:4px 12px;border-radius:4px;background:var(--sunk);border:1px solid var(--line);margin-bottom:14px}
+.sm-txt{font-size:clamp(18px,2vw,24px);line-height:1.45;margin:0;max-width:40ch}
+.sm-note{margin-top:14px;font-size:clamp(15px,1.5vw,18px);color:var(--muted);border-left:4px solid var(--mkt);padding-left:12px;max-width:44ch}
+.sm-vis{display:grid;gap:10px;align-content:center;justify-items:center;min-width:0}
+.sm-vis img,.sm-vis video{max-width:100%;max-height:62vh;border-radius:6px;background:var(--sunk);display:block}
+.stack{display:grid;gap:6px;width:min(100%,520px)}
+.stack div{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:10px 14px;border-radius:5px;border:1px solid var(--line);background:var(--surface);color:var(--muted);font-size:15px;transition:background .2s}
+.stack div b{font-weight:600}
+.stack div.on{background:var(--fab);color:var(--fab-fg);border-color:var(--fab);font-size:17px;padding:16px 14px}
+.stack div.done{color:var(--fg)}
+.stack .k{font-family:var(--mono);font-size:12px;opacity:.85;white-space:nowrap}
+.sm-vis.both{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);grid-template-rows:auto auto;align-items:center;justify-items:stretch;width:100%}
+.sm-vis.both > img,.sm-vis.both > video{grid-row:1;grid-column:1;justify-self:center}
+.sm-vis.both .sm-cap{grid-row:2;grid-column:1}
+.sm-vis.both .stack{grid-row:1 / span 2;grid-column:2}
+.sm-cap{font-size:14px;color:var(--muted);text-align:center}
+.sm-bot{display:flex;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:12px}
+.dots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
+.dots button{width:12px;height:12px;border-radius:50%;border:1px solid var(--muted);background:transparent;padding:0;cursor:pointer}
+.dots button.on{background:var(--accent);border-color:var(--accent)}
+.dots button.past{background:var(--line)}
+.sm-bot .nav{white-space:nowrap;font:600 17px var(--body);padding:12px 22px;border-radius:6px;border:1px solid var(--accent);cursor:pointer;min-width:120px}
+.sm-bot .prev{background:transparent;color:var(--accent)}
+.sm-bot .next{background:var(--accent);color:var(--accent-fg)}
+.sm-bot .nav:disabled{opacity:.35;cursor:default}
+@media (max-width:760px){.sm-main{grid-template-columns:minmax(0,1fr);align-content:start}.sm-vis{order:-1}.sm-vis img,.sm-vis video{max-height:38vh}.sm-bot .nav{min-width:0;padding:10px 14px}.sm-title{font-size:17px}}
+@media (prefers-reduced-motion:reduce){.stack div{transition:none}}
 .opcount{margin-left:auto;font-family:var(--mono);font-size:13px;font-weight:500;color:var(--muted)}
 .open summary{display:flex}
 .oplist{list-style:none;padding:0!important;margin:0;display:grid;gap:2px!important}
@@ -189,6 +228,7 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
       <span class="where de">Raum 013 · Werkstatt</span><span class="where en">Room 013 · workshop</span>
       <p class="de">Die Schüler stellen die Rotorblätter für ein Windrad aus zwei Fahrradfelgen selbst her, in Sandwich-Bauweise mit Vakuuminfusion.</p>
       <p class="en">Students make the rotor blades for a wind turbine built from two bicycle rims, using sandwich construction and vacuum infusion.</p>
+      <button type="button" class="stepbtn" data-steps="fab"><span class="de">▶ Schritt für Schritt</span><span class="en">▶ Step by step</span></button>
       <details>
         <summary><span class="de">Details</span><span class="en">Details</span></summary>
         <div class="dbody">
@@ -448,6 +488,28 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
   <footer><span class="de">Leitung: Pol Medernach, Will Reiter, Guy Putz, mit Yves für den Strommarkt-Workshop. Unterstützt von Schülern der Windmobile-Gruppe.</span><span class="en">Led by Pol Medernach, Will Reiter and Guy Putz, with Yves for the electricity market workshop. Supported by students from the Windmobile group.</span></footer>
 </div>
 
+<div class="sm" id="sm" hidden role="dialog" aria-modal="true" aria-labelledby="sm-h">
+  <div class="sm-top">
+    <div class="sm-title"><span class="de">Fertigung Rotorblätter</span><span class="en">Rotor blade manufacturing</span></div>
+    <div class="r"><button type="button" id="sm-fs"><span class="de">Vollbild</span><span class="en">Full screen</span></button><button type="button" id="sm-x" aria-label="Schließen">✕</button></div>
+  </div>
+  <div class="sm-main">
+    <div>
+      <div class="sm-num" id="sm-num"></div>
+      <h2 class="sm-h" id="sm-h"></h2>
+      <div class="sm-size" id="sm-size"></div>
+      <p class="sm-txt" id="sm-txt"></p>
+      <p class="sm-note" id="sm-note"></p>
+    </div>
+    <div class="sm-vis" id="sm-vis"></div>
+  </div>
+  <div class="sm-bot">
+    <button type="button" class="nav prev" id="sm-prev"><span class="de">← Zurück</span><span class="en">← Back</span></button>
+    <div class="dots" id="sm-dots"></div>
+    <button type="button" class="nav next" id="sm-next"></button>
+  </div>
+</div>
+
 <script>
 const T={
   de:{fab:"Fertigung",mkt:"Energy market",tour:"Energy tour",room:{fab:"Raum 013",mkt:"Raum 014",tour:"014 → Schulhof"},pause:"Pause",chg:"Wechsel",g:"Gruppe",time:"Zeit",
@@ -518,6 +580,91 @@ document.getElementById("len").onclick=()=>{lang="en";draw();save()};
 try{const s=JSON.parse(localStorage.getItem("ws1811")||"{}");if(s.lang==="en")lang="en";}catch(e){}
 if(location.hash==="#en")lang="en";if(location.hash==="#de")lang="de";
 draw();
+/* Schritt-Modus Fertigung. Fotos der Bilderfolge später einfach als img:"media/…" beim Schritt eintragen. */
+const STEPS={fab:[
+ {de:"Carbon abkleben und zuschneiden",en:"Tape and cut the carbon",size:"2 × 85 × 30 cm",
+  tde:"Die Carbonmatte an den Schnittkanten abkleben, damit sie nicht ausfranst. Dann zwei Stücke zuschneiden.",ten:"Tape the carbon fabric along the cutting lines so it does not fray. Then cut two pieces.",
+  img:"media/carbon-abkleben.jpg",cde:"Carbonmatte abkleben vor dem Zuschneiden",cen:"Taping the carbon mat before cutting"},
+ {de:"Kern zuschneiden",en:"Cut the core",size:"85 × 30 cm",
+  tde:"Das Kernmaterial auf dieselbe Größe schneiden wie die Carbonstücke.",ten:"Cut the core material to the same size as the carbon pieces.",
+  nde:"Lantor Soric ist zurzeit nicht lieferbar, wir nehmen 3DCore PET 100, 3 mm.",nen:"Lantor Soric is currently out of stock, we use 3DCore PET 100, 3 mm."},
+ {de:"Abreißgewebe und Fließhilfe zuschneiden",en:"Cut peel ply and flow mesh",size:"je 87 × 32 cm",sizeEn:"87 × 32 cm each",
+  tde:"Diese beiden Lagen sind etwas größer als das Blatt, damit sie überall überstehen.",ten:"These two layers are slightly larger than the blade so they overlap on all sides."},
+ {de:"Lage 1: Carbon",en:"Layer 1: carbon",size:"85 × 30 cm",layer:1,
+  tde:"Die erste Carbonlage sauber ausgerichtet und faltenfrei auf das Rohr legen. Das Rohr ist die Form.",ten:"Lay the first carbon layer on the pipe, properly aligned and without wrinkles. The pipe is the mould.",
+  nde:"Diese Seite ist später außen sichtbar.",nen:"This side will be visible on the outside."},
+ {de:"Lage 2: Kern",en:"Layer 2: core",size:"85 × 30 cm",layer:2,
+  tde:"Den Kern auf die Carbonlage legen und mit Sprühkleber fixieren. Er macht das Blatt steifer und lässt das Harz durchfließen.",ten:"Place the core on the carbon and fix it with spray adhesive. It makes the blade stiffer and lets the resin flow through.",
+  img:"media/soric-rohr.jpg",cde:"Kern auf dem Rohr",cen:"Core on the pipe"},
+ {de:"Lage 3: Carbon",en:"Layer 3: carbon",size:"85 × 30 cm",layer:3,
+  tde:"Die zweite Carbonlage darüberlegen. Sie gibt Festigkeit und Stabilität.",ten:"Lay the second carbon layer on top. It provides strength and stability."},
+ {de:"Lage 4: Abreißgewebe (Peel Ply)",en:"Layer 4: peel ply",size:"87 × 32 cm",layer:4,
+  tde:"Das Abreißgewebe darüberlegen. Nach dem Aushärten zieht man es mit allen Hilfsstoffen ab, zurück bleibt eine raue, klebefertige Oberfläche.",ten:"Lay the peel ply on top. After curing it is pulled off with all consumables and leaves a textured surface ready for bonding."},
+ {de:"Lage 5: Fließhilfe (Mesh)",en:"Layer 5: flow mesh",size:"87 × 32 cm",layer:5,
+  tde:"Die Fließhilfe darüberlegen. Sie verteilt das Harz schnell und gleichmäßig über die ganze Fläche.",ten:"Lay the flow mesh on top. It spreads the resin quickly and evenly across the whole surface."},
+ {de:"Dichtband und Schläuche",en:"Sealant tape and hoses",
+  tde:"Das Dichtband rund um den Aufbau anbringen. Den Harzschlauch und den Vakuumschlauch anschließen.",ten:"Apply the sealant tape around the lay-up. Connect the resin hose and the vacuum hose."},
+ {de:"Lage 6: Vakuumfolie",en:"Layer 6: vacuum bag",size:"Breite 86 cm",sizeEn:"width 86 cm",layer:6,
+  tde:"Die Vakuumfolie auflegen und rundum dicht machen. Dann die Pumpe anschließen: Der Luftdruck presst alles gleichmäßig zusammen.",ten:"Put on the vacuum bag and seal it all round. Then connect the pump: air pressure compacts everything evenly."},
+ {de:"Harz mischen",en:"Mix the resin",size:"300 g + 90 g",
+  tde:"300 g Harz und 90 g Härter (Fast) genau abwiegen und gut mischen. Das Verhältnis ist 100 : 30.",ten:"Weigh 300 g resin and 90 g hardener (fast) exactly and mix well. The ratio is 100 : 30.",
+  nde:"Nitrilhandschuhe, Schutzbrille und Schürze tragen. Für gute Lüftung sorgen.",nen:"Wear nitrile gloves, safety glasses and an apron. Make sure there is good ventilation."},
+ {de:"Infusion",en:"Infusion",
+  tde:"Die Pumpe starten und den Harzschlauch öffnen: Das Harz wird in den Aufbau gezogen. Zuschauen, wie die Fließfront über das Blatt wandert.",ten:"Start the pump and open the resin hose: the resin is drawn into the lay-up. Watch the flow front travel across the blade.",
+  video:"media/infusion.mp4",poster:"media/infusion-poster.jpg",cde:"Harzinfusion aus dem Vorversuch",cen:"Resin infusion from the trial run"},
+ {de:"Aushärten",en:"Curing",
+  tde:"Die Infrarotlampe beschleunigt das Aushärten. Währenddessen die Matten für die nächste Gruppe zuschneiden.",ten:"The infrared lamp speeds up curing. Meanwhile, cut the mats for the next group.",
+  nde:"Die Blätter sind abends oder am nächsten Tag fertig.",nen:"The blades are ready in the evening or the next day."}
+]};
+const LAYERS=[["Carbon","Carbon","85 × 30"],["Kern","Core","85 × 30"],["Carbon","Carbon","85 × 30"],["Abreißgewebe","Peel ply","87 × 32"],["Fließhilfe","Flow mesh","87 × 32"],["Vakuumfolie","Vacuum bag","86"]];
+(()=>{
+  const sm=document.getElementById("sm"),$=id=>document.getElementById(id);
+  let steps=[],i=0,opener=null;
+  const E=()=>lang==="en";
+  function el(tag,attrs){const e=document.createElement(tag);Object.assign(e,attrs||{});return e}
+  function show(){
+    const st=steps[i],en=E();
+    $("sm-num").textContent=(en?"Step ":"Schritt ")+(i+1)+" / "+steps.length;
+    $("sm-h").textContent=en?st.en:st.de;
+    const sz=en?(st.sizeEn||st.size):st.size;$("sm-size").textContent=sz||"";$("sm-size").hidden=!sz;
+    $("sm-txt").textContent=en?st.ten:st.tde;
+    const n=en?st.nen:st.nde;$("sm-note").textContent=n||"";$("sm-note").hidden=!n;
+    const v=$("sm-vis");v.replaceChildren();v.classList.toggle("both",!!((st.img||st.video)&&st.layer));
+    if(st.video){const vd=el("video",{src:st.video,poster:st.poster||"",controls:true,muted:true,playsInline:true,preload:"metadata"});v.append(vd)}
+    else if(st.img){v.append(el("img",{src:st.img,alt:""}))}
+    if(st.img||st.video){const c=en?st.cen:st.cde;if(c)v.lastChild.after(el("div",{className:"sm-cap",textContent:c}))}
+    if(!st.img&&!st.video||st.layer){
+      const stack=el("div",{className:"stack"});
+      LAYERS.slice().reverse().forEach((L,k)=>{const nr=LAYERS.length-k;const d=el("div");
+        if(st.layer===nr)d.className="on";else if(st.layer&&nr<st.layer)d.className="done";
+        const b=el("b",{textContent:nr+" · "+(en?L[1]:L[0])});const kk=el("span",{className:"k",textContent:nr===6?(en?"width ":"Breite ")+L[2]+" cm":L[2]+" cm"});
+        d.append(b,kk);stack.append(d)});
+      if(st.img||st.video){if(st.layer)v.append(stack)}else v.append(stack);
+    }
+    $("sm-prev").disabled=i===0;
+    $("sm-next").replaceChildren(document.createTextNode(i===steps.length-1?(en?"Done ✓":"Fertig ✓"):(en?"Next →":"Weiter →")));
+    [...$("sm-dots").children].forEach((b,k)=>{b.className=k===i?"on":k<i?"past":"";b.setAttribute("aria-current",k===i?"step":"false")});
+  }
+  function open(key,btn){
+    steps=STEPS[key];i=0;opener=btn;
+    $("sm-dots").replaceChildren(...steps.map((s,k)=>{const b=el("button",{type:"button"});b.setAttribute("aria-label",(E()?"Step ":"Schritt ")+(k+1));b.onclick=()=>{i=k;show()};return b}));
+    sm.hidden=false;document.body.style.overflow="hidden";show();$("sm-next").focus();
+  }
+  function close(){sm.hidden=true;document.body.style.overflow="";if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});opener&&opener.focus()}
+  document.querySelectorAll(".stepbtn").forEach(b=>b.onclick=()=>open(b.dataset.steps,b));
+  $("sm-prev").onclick=()=>{if(i>0){i--;show()}};
+  $("sm-next").onclick=()=>{if(i<steps.length-1){i++;show()}else close()};
+  $("sm-x").onclick=close;
+  $("sm-fs").onclick=()=>{if(document.fullscreenElement)document.exitFullscreen().catch(()=>{});else (sm.requestFullscreen?sm.requestFullscreen():Promise.reject()).catch(()=>{})};
+  if(!document.fullscreenEnabled)$("sm-fs").hidden=true;
+  document.addEventListener("keydown",e=>{if(sm.hidden)return;
+    if(e.key==="ArrowRight"||e.key==="PageDown"||(e.key===" "&&e.target.tagName!=="BUTTON")){e.preventDefault();$("sm-next").click()}
+    else if(e.key==="ArrowLeft"||e.key==="PageUp"){e.preventDefault();$("sm-prev").click()}
+    else if(e.key==="Escape"&&!document.fullscreenElement)close()});
+  let x0=null;sm.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});
+  sm.addEventListener("touchend",e=>{if(x0==null)return;const dx=e.changedTouches[0].clientX-x0;x0=null;if(Math.abs(dx)>60)(dx<0?$("sm-next"):$("sm-prev")).click()});
+  const od=draw;draw=function(){od();if(!sm.hidden)show()};
+})();
 /* Station aufklappen: Station oben ins Bild holen */
 document.querySelectorAll(".st > details").forEach(d=>d.addEventListener("toggle",()=>{if(d.open)d.closest(".st").scrollIntoView({behavior:"smooth",block:"start"})}));
 /* Offene Punkte: abhakbar und ergänzbar, gespeichert online (Cloudflare Worker + D1 "windmobile-punkte").
