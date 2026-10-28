@@ -154,6 +154,10 @@ a.doc:hover{filter:brightness(1.08)} a.doc:focus-visible{outline:2px solid var(-
 .stack div.on{background:var(--fab);color:var(--fab-fg);border-color:var(--fab);font-size:17px;padding:16px 14px}
 .stack div.done{color:var(--fg)}
 .stack .k{font-family:var(--mono);font-size:12px;opacity:.85;white-space:nowrap}
+.sm-vis.both{grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);grid-template-rows:auto auto;align-items:center;justify-items:stretch;width:100%}
+.sm-vis.both > img,.sm-vis.both > video{grid-row:1;grid-column:1;justify-self:center}
+.sm-vis.both .sm-cap{grid-row:2;grid-column:1}
+.sm-vis.both .stack{grid-row:1 / span 2;grid-column:2}
 .sm-cap{font-size:14px;color:var(--muted);text-align:center}
 .sm-bot{display:flex;gap:12px;align-items:center;justify-content:space-between;border-top:1px solid var(--line);padding-top:12px}
 .dots{display:flex;flex-wrap:wrap;gap:6px;justify-content:center}
@@ -625,10 +629,10 @@ const LAYERS=[["Carbon","Carbon","85 × 30"],["Kern","Core","85 × 30"],["Carbon
     const sz=en?(st.sizeEn||st.size):st.size;$("sm-size").textContent=sz||"";$("sm-size").hidden=!sz;
     $("sm-txt").textContent=en?st.ten:st.tde;
     const n=en?st.nen:st.nde;$("sm-note").textContent=n||"";$("sm-note").hidden=!n;
-    const v=$("sm-vis");v.replaceChildren();
+    const v=$("sm-vis");v.replaceChildren();v.classList.toggle("both",!!((st.img||st.video)&&st.layer));
     if(st.video){const vd=el("video",{src:st.video,poster:st.poster||"",controls:true,muted:true,playsInline:true,preload:"metadata"});v.append(vd)}
-    else if(st.img){const im=el("img",{src:st.img,alt:""});if(st.layer)im.style.maxHeight="34vh";v.append(im)}
-    if(st.img||st.video){const c=en?st.cen:st.cde;if(c)v.append(el("div",{className:"sm-cap",textContent:c}))}
+    else if(st.img){v.append(el("img",{src:st.img,alt:""}))}
+    if(st.img||st.video){const c=en?st.cen:st.cde;if(c)v.lastChild.after(el("div",{className:"sm-cap",textContent:c}))}
     if(!st.img&&!st.video||st.layer){
       const stack=el("div",{className:"stack"});
       LAYERS.slice().reverse().forEach((L,k)=>{const nr=LAYERS.length-k;const d=el("div");
