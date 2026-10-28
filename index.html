@@ -140,6 +140,7 @@ a.doc:hover{filter:brightness(1.08)} a.doc:focus-visible{outline:2px solid var(-
 .opadd input{flex:1;min-width:0;font:inherit;font-size:14px;padding:8px 10px;border:1px solid var(--line);border-radius:5px;background:var(--bg);color:var(--fg)}
 .opadd input:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
 .opadd button{font:600 13.5px var(--body);padding:8px 14px;border-radius:5px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-fg);cursor:pointer}
+.sz{font-family:var(--mono);font-size:12px;white-space:nowrap;color:var(--muted);margin-left:4px}
 .opmsg{font-size:12.5px;color:var(--muted)}
 footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
 
@@ -192,13 +193,29 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
           </div>
           <div>
             <h4 class="de">Werkstoffe</h4><h4 class="en">Materials</h4>
-            <ul class="de"><li>Aufbau: zwei Carbonmatten mit einem Kern (Core) dazwischen</li><li>Kern: Lantor Soric SF (1200 mm Breite), erhältlich bei Easy Composites</li><li>1 bis 2 Blätter aus Glasfaser zum Vergleich</li><li>Epoxid-Infusionsharz mit Härter (Fast): 300 g Harz und 90 g Härter</li><li>Rohr als Form, Dichtband, Vakuumschlauch, Vakuumfolie, Vakuumpumpe, Infrarotlampe</li></ul>
-            <ul class="en"><li>Lay-up: two carbon fibre mats with a core in between</li><li>Core: Lantor Soric SF (1200 mm width), available from Easy Composites</li><li>1 or 2 blades in glass fibre for comparison</li><li>Epoxy infusion resin with hardener (fast): 300 g resin and 90 g hardener</li><li>Pipe as mould, sealant tape, vacuum hose, vacuum film, vacuum pump, infrared lamp</li></ul>
+            <ul class="de"><li>Aufbau: zwei Carbonmatten mit einem Kern (Core) dazwischen</li><li>Kern: Lantor Soric SF (1200 mm Breite), erhältlich bei Easy Composites. Zurzeit nicht lieferbar, bestellt wird stattdessen 3DCore PET 100 Infusionsschaum, 3 mm (Platte 1015 × 405 mm, eine Platte pro Blatt)</li><li>1 bis 2 Blätter aus Glasfaser zum Vergleich</li><li>Epoxid-Infusionsharz mit Härter (Fast): 300 g Harz und 90 g Härter</li><li>Abreißgewebe (Peel Ply) und Fließhilfe (Infusion Mesh) über dem Laminat</li><li>Rohr als Form, Dichtband, Vakuumschlauch, Vakuumfolie, Vakuumpumpe, Infrarotlampe</li></ul>
+            <ul class="en"><li>Lay-up: two carbon fibre mats with a core in between</li><li>Core: Lantor Soric SF (1200 mm width), available from Easy Composites. Currently out of stock, so 3DCore PET 100 infusion foam, 3 mm, is ordered instead (sheet 1015 × 405 mm, one sheet per blade)</li><li>1 or 2 blades in glass fibre for comparison</li><li>Epoxy infusion resin with hardener (fast): 300 g resin and 90 g hardener</li><li>Peel ply and infusion flow mesh on top of the laminate</li><li>Pipe as mould, sealant tape, vacuum hose, vacuum film, vacuum pump, infrared lamp</li></ul>
+          </div>
+          <div>
+            <h4 class="de">Lagenaufbau Schritt für Schritt</h4><h4 class="en">Layup schedule step by step</h4>
+            <div class="tbl"><table>
+              <thead><tr><th class="n">#</th><th><span class="de">Lage</span><span class="en">Layer</span></th></tr></thead>
+              <tbody>
+                <tr><td class="n">1</td><td><b class="de">Carbon, 1. Lage</b><b class="en">Carbon, 1st layer</b> <span class="sz">85 × 30 cm</span><br><span class="de">Strukturlage. Erste sichtbare Carbonlage, sauber ausgerichtet und faltenfrei auf die Form legen.</span><span class="en">Structural layer. First visible carbon layer; align it properly and lay it on the mould without wrinkles.</span></td></tr>
+                <tr><td class="n">2</td><td><b class="de">Kern (Lantor Soric), 2. Lage</b><b class="en">Core (Lantor Soric), 2nd layer</b> <span class="sz">85 × 30 cm</span><br><span class="de">Sandwich-Kern. Biegsames Wabenmaterial, macht das Blatt steifer und hilft dem Harz, durch das Laminat zu fließen.</span><span class="en">Sandwich core. Flexible honeycomb material that increases stiffness and helps the resin flow through the laminate.</span></td></tr>
+                <tr><td class="n">3</td><td><b class="de">Carbon, 3. Lage</b><b class="en">Carbon, 3rd layer</b> <span class="sz">85 × 30 cm</span><br><span class="de">Strukturlage. Zweite Carbonlage für Festigkeit, Stabilität und eine gute Oberfläche.</span><span class="en">Structural layer. Second carbon layer for strength, stability and a good surface finish.</span></td></tr>
+                <tr><td class="n">4</td><td><b class="de">Abreißgewebe (Peel Ply), 4. Lage</b><b class="en">Peel ply (release fabric), 4th layer</b> <span class="sz">87 × 32 cm</span><br><span class="de">Trennlage. Lässt sich nach dem Aushärten mit den Hilfsstoffen abziehen und hinterlässt eine raue, klebefertige Oberfläche.</span><span class="en">Release layer. Peels off with the consumables after curing and leaves a textured surface ready for bonding.</span></td></tr>
+                <tr><td class="n">5</td><td><b class="de">Fließhilfe (Infusion Mesh), 5. Lage</b><b class="en">Infusion flow mesh, 5th layer</b> <span class="sz">87 × 32 cm</span><br><span class="de">Verteilt das Harz schnell und gleichmäßig über die ganze Fläche.</span><span class="en">Distributes the resin quickly and evenly across the whole surface.</span></td></tr>
+                <tr><td class="n">6</td><td><b class="de">Vakuumfolie (Schlauchfolie)</b><b class="en">Vacuum bag (bagging film / tube)</b> <span class="sz"><span class="de">Breite 86 cm</span><span class="en">width 86 cm</span></span><br><span class="de">Schließt den ganzen Aufbau luftdicht ein, damit der Luftdruck alles gleichmäßig zusammenpresst.</span><span class="en">Encloses the whole stack airtight so that atmospheric pressure compacts it evenly.</span></td></tr>
+              </tbody>
+            </table></div>
+            <p class="de" style="font-size:13px;color:var(--muted)">Kern: Soric ist zurzeit nicht lieferbar, bestellt ist 3DCore PET 100, 3 mm (siehe Werkstoffe).</p>
+            <p class="en" style="font-size:13px;color:var(--muted)">Core: Soric is currently out of stock; 3DCore PET 100, 3 mm, has been ordered (see materials).</p>
           </div>
           <div>
             <h4 class="de">Arbeitsschritte</h4><h4 class="en">Process steps</h4>
-            <ol class="de"><li>Carbonmatten abkleben und zuschneiden</li><li>Carbonmatten und Kern auf Länge schneiden</li><li>Carbonmatte, Kern und zweite Carbonmatte auf das Rohr legen, das als Form dient</li><li>Dichtband anbringen, Vakuumschlauch anschließen</li><li>Vakuumfolie auflegen und abdichten, Pumpe anschließen</li><li>300 g Harz und 90 g Härter (Fast) mischen, Verhältnis 100:30</li><li>Pumpe starten: Das Harz wird in den Aufbau gezogen</li><li>Währenddessen Matten für die nächste Gruppe zuschneiden</li><li>Aushärtung mit Infrarotlampe beschleunigen</li></ol>
-            <ol class="en"><li>Tape and cut the carbon fabric</li><li>Cut the carbon mats and the core to length</li><li>Lay carbon mat, core and second carbon mat on the pipe that serves as the mould</li><li>Apply sealant tape, attach the vacuum hose</li><li>Put on and seal the vacuum film, connect the pump</li><li>Mix 300 g resin and 90 g hardener (fast), ratio 100:30</li><li>Start the pump: the resin is drawn into the lay-up</li><li>Meanwhile, cut the mats for the next group</li><li>Speed up curing with an infrared lamp</li></ol>
+            <ol class="de"><li>Carbonmatten abkleben und zuschneiden</li><li>Carbonmatten und Kern auf Länge schneiden</li><li>Carbonmatte, Kern und zweite Carbonmatte auf das Rohr legen, das als Form dient, darüber Abreißgewebe und Fließhilfe</li><li>Dichtband anbringen, Vakuumschlauch anschließen</li><li>Vakuumfolie auflegen und abdichten, Pumpe anschließen</li><li>300 g Harz und 90 g Härter (Fast) mischen, Verhältnis 100:30</li><li>Pumpe starten: Das Harz wird in den Aufbau gezogen</li><li>Währenddessen Matten für die nächste Gruppe zuschneiden</li><li>Aushärtung mit Infrarotlampe beschleunigen</li></ol>
+            <ol class="en"><li>Tape and cut the carbon fabric</li><li>Cut the carbon mats and the core to length</li><li>Lay carbon mat, core and second carbon mat on the pipe that serves as the mould, then peel ply and flow mesh on top</li><li>Apply sealant tape, attach the vacuum hose</li><li>Put on and seal the vacuum film, connect the pump</li><li>Mix 300 g resin and 90 g hardener (fast), ratio 100:30</li><li>Start the pump: the resin is drawn into the lay-up</li><li>Meanwhile, cut the mats for the next group</li><li>Speed up curing with an infrared lamp</li></ol>
           </div>
           <div>
             <h4 class="de">Fotos und Video aus dem Vorversuch</h4><h4 class="en">Photos and video from the trial run</h4>
@@ -208,6 +225,32 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
               <figure><img src="media/spruehkleber.jpg" alt="" loading="lazy"><figcaption><span class="de">Kern mit Sprühkleber auf dem Rohr fixieren</span><span class="en">Fixing the core to the pipe with spray adhesive</span></figcaption></figure>
               <figure><video src="media/infusion.mp4" poster="media/infusion-poster.jpg" controls muted playsinline preload="none"></video><figcaption><span class="de">Harzinfusion: Das Harz fließt in den Aufbau</span><span class="en">Resin infusion: the resin flows into the lay-up</span></figcaption></figure>
             </div>
+            <p class="soon" style="margin-top:8px;justify-self:start"><span class="de">Bilderfolge zu den einzelnen Schritten folgt</span><span class="en">Photo sequence of the individual steps coming soon</span></p>
+          </div>
+          <div>
+            <h4 class="de">Material und Bestellung</h4><h4 class="en">Materials and order</h4>
+            <p class="de">Angebot Easy Composites Nr. 30105 vom 20.10.2026, gültig bis 19.11.2026: 1&nbsp;720,55&nbsp;€ inkl. Versand (ohne MwSt.).</p>
+            <p class="en">Easy Composites quotation no. 30105 of 20 Oct 2026, valid until 19 Nov 2026: €1,720.55 incl. shipping (excl. VAT).</p>
+            <div class="tbl"><table>
+              <thead><tr><th><span class="de">Artikel</span><span class="en">Item</span></th><th class="n"><span class="de">Menge</span><span class="en">Qty</span></th></tr></thead>
+              <tbody>
+                <tr><td>3DCore PET 100 <span class="de">Infusionsschaum 3 mm (1015 × 405 mm)</span><span class="en">infusion foam 3 mm (1015 × 405 mm)</span></td><td class="n">20</td></tr>
+                <tr><td>IN2 <span class="de">Epoxid-Infusionsharz FAST, 5-kg-Kit</span><span class="en">epoxy infusion resin FAST, 5 kg kit</span></td><td class="n">2</td></tr>
+                <tr><td>ML3 Multi Layer Infusion Media (1520 mm), <span class="de">Laufmeter</span><span class="en">linear metres</span></td><td class="n">20</td></tr>
+                <tr><td><span class="de">Infusionsspirale</span><span class="en">Resin infusion spiral</span> 8 mm ID</td><td class="n">20</td></tr>
+                <tr><td><span class="de">Infusionsanschluss</span><span class="en">Resin infusion connector</span> 8 mm</td><td class="n">10</td></tr>
+                <tr><td><span class="de">Schlauchklemme</span><span class="en">Resin infusion line clamp</span></td><td class="n">8</td></tr>
+                <tr><td><span class="de">PVC-Vakuumschlauch 6 mm ID, 30 m</span><span class="en">PVC vacuum hose 6 mm ID, 30 m</span></td><td class="n">1</td></tr>
+                <tr><td><span class="de">Vakuumpumpe EC5 (trockenlaufend)</span><span class="en">EC5 dry running vacuum pump</span></td><td class="n">1</td></tr>
+                <tr><td><span class="de">Ersatzfilter VF05 für die Pumpe</span><span class="en">VF05 pump filter element</span></td><td class="n">1</td></tr>
+                <tr><td><span class="de">Harzfalle CP1 (Catch-Pot 1,2 l)</span><span class="en">CP1 resin catch-pot 1.2 l</span></td><td class="n">1</td></tr>
+                <tr><td><span class="de">Elektrische Composite-Schere WBT2-C</span><span class="en">WBT2-C electric composites scissors</span></td><td class="n">1</td></tr>
+                <tr><td><span class="de">Kleber VM100 Black (10 min), 25-ml-Spritze</span><span class="en">VM100 Black adhesive (10 min), 25 ml syringe</span></td><td class="n">30</td></tr>
+                <tr><td><span class="de">Mischdüsen 50 ml, 5er-Pack</span><span class="en">50 ml mixer nozzles, pack of 5</span></td><td class="n">30</td></tr>
+              </tbody>
+            </table></div>
+            <p class="de" style="font-size:13px;color:var(--muted)">Harz und Kleber sind Gefahrgut (DG LQ). Das Angebot läuft am 19.11. aus, also nach dem Workshop: rechtzeitig bestellen.</p>
+            <p class="en" style="font-size:13px;color:var(--muted)">Resin and adhesive are dangerous goods (DG LQ). The quote expires on 19 Nov, after the workshop: order in good time.</p>
           </div>
           <div>
             <h4 class="de">Pro Runde</h4><h4 class="en">Per round</h4>
