@@ -192,10 +192,10 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
 @media (max-width:900px){.days,.rooms{grid-template-columns:minmax(0,1fr)} .stations{grid-template-columns:minmax(0,1fr)} .facts{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (prefers-reduced-motion:reduce){summary::before{transition:none}}
 </style>
+
 <style>*,*::before,*::after{box-sizing:border-box}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-
 
 <div class="wrap">
   <div class="top">
@@ -587,17 +587,21 @@ const STEPS={fab:[
   img:"media/carbon-abkleben.jpg",cde:"Carbonmatte abkleben vor dem Zuschneiden",cen:"Taping the carbon mat before cutting"},
  {de:"Kern zuschneiden",en:"Cut the core",size:"85 × 30 cm",
   tde:"Das Kernmaterial auf dieselbe Größe schneiden wie die Carbonstücke.",ten:"Cut the core material to the same size as the carbon pieces.",
-  nde:"Lantor Soric ist zurzeit nicht lieferbar, wir nehmen 3DCore PET 100, 3 mm.",nen:"Lantor Soric is currently out of stock, we use 3DCore PET 100, 3 mm."},
+  nde:"Lantor Soric ist zurzeit nicht lieferbar, wir nehmen 3DCore PET 100, 3 mm.",nen:"Lantor Soric is currently out of stock, we use 3DCore PET 100, 3 mm.",
+  img:"media/kern-zugeschnitten.jpg",cde:"Zugeschnittener Kern (3DCore mit Wabenmuster)",cen:"Core cut to size (3DCore with honeycomb pattern)"},
  {de:"Abreißgewebe und Fließhilfe zuschneiden",en:"Cut peel ply and flow mesh",size:"je 87 × 32 cm",sizeEn:"87 × 32 cm each",
-  tde:"Diese beiden Lagen sind etwas größer als das Blatt, damit sie überall überstehen.",ten:"These two layers are slightly larger than the blade so they overlap on all sides."},
+  tde:"Diese beiden Lagen sind etwas größer als das Blatt, damit sie überall überstehen.",ten:"These two layers are slightly larger than the blade so they overlap on all sides.",
+  img:"media/abreissgewebe-fliesshilfe.jpg",cde:"Rolle mit Abreißgewebe und Fließhilfe (gelb)",cen:"Roll of peel ply and flow mesh (yellow)"},
  {de:"Lage 1: Carbon",en:"Layer 1: carbon",size:"85 × 30 cm",layer:1,
   tde:"Die erste Carbonlage sauber ausgerichtet und faltenfrei auf das Rohr legen. Das Rohr ist die Form.",ten:"Lay the first carbon layer on the pipe, properly aligned and without wrinkles. The pipe is the mould.",
-  nde:"Diese Seite ist später außen sichtbar.",nen:"This side will be visible on the outside."},
+  nde:"Diese Seite ist später außen sichtbar.",nen:"This side will be visible on the outside.",
+  img:"media/carbon-zugeschnitten.jpg",cde:"Zugeschnittene Carbonlage mit abgeklebter Kante",cen:"Cut carbon layer with taped edge"},
  {de:"Lage 2: Kern",en:"Layer 2: core",size:"85 × 30 cm",layer:2,
   tde:"Den Kern auf die Carbonlage legen und mit Sprühkleber fixieren. Er macht das Blatt steifer und lässt das Harz durchfließen.",ten:"Place the core on the carbon and fix it with spray adhesive. It makes the blade stiffer and lets the resin flow through.",
   img:"media/soric-rohr.jpg",cde:"Kern auf dem Rohr",cen:"Core on the pipe"},
  {de:"Lage 3: Carbon",en:"Layer 3: carbon",size:"85 × 30 cm",layer:3,
-  tde:"Die zweite Carbonlage darüberlegen. Sie gibt Festigkeit und Stabilität.",ten:"Lay the second carbon layer on top. It provides strength and stability."},
+  tde:"Die zweite Carbonlage darüberlegen. Sie gibt Festigkeit und Stabilität.",ten:"Lay the second carbon layer on top. It provides strength and stability.",
+  img:"media/carbon-auf-kern.jpg",cde:"Die zweite Carbonlage kommt auf den Kern",cen:"The second carbon layer goes on top of the core"},
  {de:"Lage 4: Abreißgewebe (Peel Ply)",en:"Layer 4: peel ply",size:"87 × 32 cm",layer:4,
   tde:"Das Abreißgewebe darüberlegen. Nach dem Aushärten zieht man es mit allen Hilfsstoffen ab, zurück bleibt eine raue, klebefertige Oberfläche.",ten:"Lay the peel ply on top. After curing it is pulled off with all consumables and leaves a textured surface ready for bonding."},
  {de:"Lage 5: Fließhilfe (Mesh)",en:"Layer 5: flow mesh",size:"87 × 32 cm",layer:5,
