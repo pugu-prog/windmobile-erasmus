@@ -484,33 +484,6 @@ footer{font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padd
     <div class="drow" style="--c:var(--tour)"><div><b>Energy tour</b><span class="de">Timeline 20 Jahre Windmobile</span><span class="en">Timeline 20 years of Windmobile</span></div><span class="soon de">folgt</span><span class="soon en">coming soon</span></div>
   </section>
 
-  <details class="open" open>
-    <summary><span class="de">Offene Punkte</span><span class="en">Open points</span><span class="opcount" id="op-count"></span></summary>
-    <div class="dbody">
-      <ul class="oplist" id="op-list" hidden></ul>
-      <form class="opadd" id="op-add" hidden>
-        <input id="op-input" type="text" maxlength="400" autocomplete="off" aria-label="Neuer Punkt">
-        <button type="submit"><span class="de">Hinzufügen</span><span class="en">Add</span></button>
-      </form>
-      <p class="opmsg" id="op-msg" hidden></p>
-      <div id="op-static">
-        <ul class="de">
-          <li><b>Raum 014</b> für den ganzen Mittwoch freimachen lassen, Beamer prüfen. Ansprechperson: Joy Sanchis (?)</li>
-          <li><b>Start 9:00:</b> Die Präsentationen der Missionen (im Gesamtplan 9:00–9:30) brauchen einen anderen Platz, etwa die Collaboration time 16:30–17:00.</li>
-          <li><b>Formen:</b> Die letzte Vormittagsgruppe endet 12:30, um 13:30 werden die Rohre wieder gebraucht. Zweiten Satz Rohre als Formen vorsehen.</li>
-          <li><b>Plan der Partner:</b> Im Gesamtplan steht „Guy &amp; Yves“. Will und Pol für die Fertigung dort ergänzen.</li>
-          <li><b>Helfer:</b> Schüler aus der Windmobile-Gruppe für Fertigung und Schulhof einteilen.</li>
-        </ul>
-        <ul class="en">
-          <li><b>Room 014:</b> have it cleared for the whole Wednesday and check the projector. Contact: Joy Sanchis (?)</li>
-          <li><b>Start 9:00:</b> the mission presentations (9:00–9:30 in the overall plan) need another slot, e.g. collaboration time 16:30–17:00.</li>
-          <li><b>Moulds:</b> the last morning group ends at 12:30 and the pipes are needed again at 13:30. Plan a second set of pipes as moulds.</li>
-          <li><b>Partner schedule:</b> the overall plan says “Guy &amp; Yves”. Add Will and Pol for manufacturing.</li>
-          <li><b>Helpers:</b> assign students from the Windmobile group to manufacturing and the schoolyard.</li>
-        </ul>
-      </div>
-    </div>
-  </details>
 
   <footer><span class="de">Leitung: Pol Medernach, Will Reiter, Guy Putz, mit Yves für den Strommarkt-Workshop. Unterstützt von Schülern der Windmobile-Gruppe.</span><span class="en">Led by Pol Medernach, Will Reiter and Guy Putz, with Yves for the electricity market workshop. Supported by students from the Windmobile group.</span></footer>
 </div>
@@ -674,53 +647,6 @@ const LAYERS=[["Carbon", "Carbon", "85 × 30"], ["Kern", "Core", "85 × 30"], ["
 })();
 /* Station aufklappen: Station oben ins Bild holen */
 document.querySelectorAll(".st > details").forEach(d=>d.addEventListener("toggle",()=>{if(d.open)d.closest(".st").scrollIntoView({behavior:"smooth",block:"start"})}));
-/* Offene Punkte: abhakbar und ergänzbar, gespeichert online (Cloudflare Worker + D1 "windmobile-punkte").
-   Lesen ist offen, Ändern braucht den Teamcode (einmal pro Gerät, bleibt im Browser). */
-(()=>{
-  const API="https://erasmus-kriterien.gseltett.workers.dev/ws-punkte";
-  const list=document.getElementById("op-list"),form=document.getElementById("op-add"),inp=document.getElementById("op-input"),msg=document.getElementById("op-msg"),cnt=document.getElementById("op-count");
-  let items=[],code="";
-  try{code=localStorage.getItem("ws1811-code")||""}catch(e){}
-  const en=()=>lang==="en";
-  const say=t=>{msg.textContent=t||"";msg.hidden=!t};
-  const txt=it=>(en()?(it.en||it.de):(it.de||it.en))||it.text||"";
-  async function load(){
-    try{const r=await fetch(API,{cache:"no-store"});if(!r.ok)throw 0;items=(await r.json()).punkte||[];
-      document.getElementById("op-static").hidden=true;list.hidden=false;form.hidden=false;paint()}
-    catch(e){if(!items.length)return;say(en()?"Offline – showing last state.":"Keine Verbindung – letzter Stand.")}
-  }
-  async function send(path,body){
-    for(let i=0;i<2;i++){
-      if(!code){const c=prompt(en()?"Team code to edit the list:":"Teamcode zum Bearbeiten der Liste:");if(!c)return false;code=c.trim()}
-      let r;try{r=await fetch(API+"/"+path,{method:"POST",headers:{"content-type":"application/json","x-code":code},body:JSON.stringify(body)})}
-      catch(e){say(en()?"No connection, not saved.":"Keine Verbindung, nicht gespeichert.");return false}
-      if(r.status===401){code="";try{localStorage.removeItem("ws1811-code")}catch(e){}alert(en()?"Wrong code.":"Falscher Code.");continue}
-      if(!r.ok){say(en()?"Could not save.":"Konnte nicht gespeichert werden.");return false}
-      try{localStorage.setItem("ws1811-code",code)}catch(e){}
-      say("");return true
-    }
-    return false
-  }
-  function paint(){
-    const sorted=[...items].sort((a,b)=>(a.done-b.done)||(a.ord-b.ord));
-    list.replaceChildren(...sorted.map(it=>{
-      const li=document.createElement("li");li.className=it.done?"done":"";
-      const lb=document.createElement("label");const cb=document.createElement("input");cb.type="checkbox";cb.checked=!!it.done;
-      cb.onchange=async()=>{const want=cb.checked;if(await send("done",{id:it.id,done:want})){it.done=want?1:0;paint()}else cb.checked=!want};
-      const sp=document.createElement("span");sp.className="tx";sp.textContent=txt(it);
-      lb.append(cb,sp);
-      const del=document.createElement("button");del.type="button";del.className="del";del.textContent="×";del.title=en()?"Delete":"Löschen";del.setAttribute("aria-label",del.title);
-      del.onclick=async()=>{if(!confirm((en()?"Delete this point?\n\n":"Diesen Punkt löschen?\n\n")+txt(it)))return;if(await send("delete",{id:it.id}))load()};
-      li.append(lb,del);return li}));
-    const d=items.filter(i=>i.done).length;cnt.textContent=items.length?`${d}/${items.length}`:"";
-    inp.placeholder=en()?"New point …":"Neuer Punkt …";
-  }
-  form.onsubmit=async e=>{e.preventDefault();const t=inp.value.trim();if(t.length<2)return;if(await send("add",{text:t})){inp.value="";load()}};
-  const od=draw;draw=function(){od();if(items.length)paint()};
-  load();
-  document.addEventListener("visibilitychange",()=>{if(!document.hidden)load()});
-  setInterval(()=>{if(!document.hidden)load()},60000);
-})();
 </script>
 
 </body>

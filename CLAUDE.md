@@ -5,7 +5,7 @@ Kontext für Claude Code (übernommen aus dem Claude-Artifact „Windmobile Work
 ## Was das ist
 Zweisprachige Planungsseite (DE/EN, Umschalter oben) für den Erasmus-Workshoptag am LTEtt, Mittwoch 18.11.2026.
 
-- Live: https://pugu-prog.github.io/windmobile-erasmus/ (GitHub Pages, Branch `main`, `.nojekyll`)
+- Live: https://pugu-prog.github.io/windmobile-erasmus/ (GitHub Pages baut aus Branch `gh-pages`: immer `git push origin main main:gh-pages`, `.nojekyll`)
 - `index.html` – die ganze Seite in einer Datei (CSS + JS inline, Logos als eingebettete WebP-Data-URIs). Inhaltlich identisch mit dem Artifact.
 - `media/` – Fotos (Gesichter herausgeschnitten) und Video der Harzinfusion aus dem Vorversuch, in den Fertigungs-Details
 - `docs/` – Folien Energy market von Yves (PDF + PPTX, Stand 05.10.2026), von der Seite verlinkt
@@ -18,15 +18,8 @@ Zweisprachige Planungsseite (DE/EN, Umschalter oben) für den Erasmus-Workshopta
 - Raum 014 ist nie doppelt belegt: dieselbe Gruppe hat erst Yves, dann Guy
 - Vormittag fest ab 9:00 (früher Variante B); Missions-Präsentationen aus dem Gesamtplan (9:00–9:30) müssen verschoben werden
 
-## Offene Punkte (Stand Artifact)
-- Raum 014 für den ganzen Mittwoch freimachen, Beamer prüfen (Ansprechperson Joy Sanchis?)
-- Neuen Platz für die Missions-Präsentationen finden
-- Zweiten Satz Rohre als Formen vorsehen (12:30 → 13:30)
-- Im Gesamtplan der Partner Will und Pol für die Fertigung ergänzen
-- Helfer aus der Windmobile-Gruppe einteilen
-- Unterlagen „folgt“: Arbeitsblatt Fertigung, Timeline 20 Jahre Windmobile
-
 ## Arbeitsweise
-- Änderungen direkt auf `main` pushen = live über GitHub Pages
+- Änderungen auf `main` und `gh-pages` pushen = live über GitHub Pages
+- Seite ist für die Erasmus-Schüler freigegeben (seit 11.11.2026): keine internen Planungspunkte, Preise oder Bestellungen
 - Jeder Text existiert zweimal (`.de` / `.en`); beide Sprachen immer zusammen ändern
 - Seite muss auch am Handy funktionieren (Breakpoint 900 px) und hat Hell/Dunkel-Modus
