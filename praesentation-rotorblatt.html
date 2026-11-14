@@ -1,0 +1,230 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rotor blade workshop · slides</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>*{box-sizing:border-box}html,body{margin:0;height:100%;background:#0b1e36;overflow:hidden}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;transform-origin:center center}
+#stage>section{position:absolute;inset:0;width:1920px;height:1080px;overflow:hidden;opacity:0;pointer-events:none;transition:opacity .35s}
+#stage>section.on{opacity:1;pointer-events:auto}
+aside{display:none}
+#bar{position:fixed;left:0;right:0;bottom:0;display:flex;gap:12px;align-items:center;justify-content:space-between;padding:8px 14px;font:500 14px 'IBM Plex Sans',Arial,sans-serif;color:#cfe0f2;background:rgba(11,30,54,.78);opacity:0;transition:opacity .25s}
+body.ui #bar,#bar:hover,#bar:focus-within{opacity:1}
+#bar button,#bar a{font:inherit;color:#fff;background:#2f6db5;border:0;border-radius:5px;padding:7px 13px;cursor:pointer;text-decoration:none}
+#bar .g{display:flex;gap:8px;align-items:center}
+video{border-radius:12px;object-fit:cover;background:#000}</style><style>body{font-family:'IBM Plex Sans',Arial,sans-serif;}
+section{background:#F4F7FB;color:#143862;padding:128px;display:flex;flex-direction:column;}
+section.dark{background:#143862;color:#F4F7FB;}
+h1,h2,h3{font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-weight:700;}
+h1{font-size:148px;line-height:1;}
+h2{font-size:84px;line-height:1.05;margin-bottom:48px;}
+h3{font-size:48px;line-height:1.1;margin-bottom:24px;}
+
+@keyframes rise{from{opacity:0;transform:translateY(24px);}}
+
+/* Titel und Schlussfolie */
+.cover-img{position:absolute;left:1100px;top:0;width:820px;height:1080px;object-fit:cover;}
+.cover{justify-content:center;}
+.cover-text{width:880px;}
+.eyebrow{font-size:28px;font-weight:600;letter-spacing:3px;color:#95C11F;margin-bottom:40px;}
+.sub{font-size:36px;line-height:1.4;color:#CFE0F2;margin-top:48px;}
+
+/* Turbine mit Animation */
+.turbine{display:flex;gap:64px;align-items:flex-start;}
+.stats{width:520px;display:flex;flex-direction:column;gap:40px;}
+.stat{animation:rise 600ms ease-out both;animation-delay:calc(var(--i) * 150ms);}
+.stat .big{font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:120px;line-height:1;font-weight:700;color:#F39200;}
+.stat .big.sm{font-size:80px;}
+.stat .lab{font-size:30px;line-height:1.3;color:#CFE0F2;}
+.render{width:397px;height:608px;border-radius:12px;object-fit:cover;flex:none;}
+.video{width:1152px;height:648px;border-radius:12px;object-fit:cover;flex:none;}
+.turbine .render{height:648px;width:423px;}
+
+/* Lagen und Ablauf */
+.cols{display:flex;gap:80px;}
+.col{flex:1;}
+.row{display:flex;align-items:center;gap:24px;padding:16px 24px;background:#E3EBF4;border-radius:12px;margin-bottom:16px;}
+.row .name{font-size:30px;font-weight:600;line-height:1.25;}
+.row .size{font-size:24px;color:#566F8C;}
+.num{width:64px;height:64px;border-radius:32px;display:flex;align-items:center;justify-content:center;flex:none;}
+.num p{font-size:32px;font-weight:600;line-height:1;}
+.num.c1,.num.c3{background:#143862;color:#FFFFFF;}
+.num.c2{background:#2F6DB5;color:#FFFFFF;}
+.num.c4{background:#F39200;color:#2B1700;}
+.num.c5{background:#95C11F;color:#1D2B03;}
+.num.s{background:#F39200;color:#2B1700;}
+
+/* Schritt fuer Schritt */
+.three{display:flex;gap:48px;}
+.three.four{gap:32px;}
+.step{flex:1;animation:rise 600ms ease-out both;}
+.step img{width:100%;height:330px;object-fit:cover;border-radius:12px;margin-bottom:20px;}
+.four .step img{height:300px;}
+.step .head{display:flex;align-items:center;gap:16px;margin-bottom:12px;}
+.step .stitle{font-size:36px;font-weight:600;line-height:1.15;}
+.step .ssize{font-size:26px;color:#566F8C;margin-bottom:8px;}
+.step .stext{font-size:28px;line-height:1.35;}
+.four .step .stext{font-size:26px;}
+.infuse{display:flex;gap:64px;align-items:flex-start;}
+.infuse .video{width:900px;height:506px;}
+.dcol{width:700px;}
+.drow{display:flex;align-items:center;gap:24px;padding:14px 24px;background:#1C4A7E;border-radius:12px;margin-bottom:14px;}
+.drow p{font-size:28px;line-height:1.3;}
+
+/* Vorversuche */
+.trials{display:flex;gap:32px;}
+.card{flex:1;display:flex;flex-direction:column;gap:12px;padding:24px;background:#1C4A7E;border-radius:16px;animation:rise 600ms ease-out both;animation-delay:calc(var(--i) * 200ms);}
+.card img{width:100%;height:240px;object-fit:cover;border-radius:12px;flex:none;}
+.card .tag{font-size:28px;font-weight:600;letter-spacing:3px;color:#95C11F;}
+.card .grams{font-family:'Barlow Condensed','Arial Narrow',Arial,sans-serif;font-size:96px;line-height:1;font-weight:700;}
+.card .line{font-size:26px;line-height:1.3;color:#E3EBF4;}
+.note{font-size:32px;line-height:1.4;color:#CFE0F2;margin-top:32px;}
+</style><style></style></head><body>
+<div id="stage"><section id="cover" class="dark cover" data-transition="fade">
+<img class="cover-img" src="media/deck/vorversuch-b-schale.jpg" alt="Finished carbon half-pipe rotor blade on a workshop table">
+<div class="cover-text">
+<p class="eyebrow">ERASMUS WORKSHOP · 18 NOVEMBER 2026</p>
+<h1>Build a carbon rotor blade</h1>
+<p class="sub">Sandwich construction with vacuum infusion<br>Windmobile · LTEtt</p>
+</div>
+
+</section>
+<section id="turbine" class="dark" data-transition="fade">
+<h2>Eight carbon blades on one bicycle rim</h2>
+<div class="turbine">
+<img class="render" src="media/deck/windrad-cad-render.jpg" alt="CAD render of the vertical wind turbine: eight carbon half-pipe blades around a bicycle rim on a steel tube and a wooden base plate">
+<img class="video" src="media/deck/animation-poster-drehend.jpg" data-video="media/windrad-animation.mp4" alt="20-second animation: blade, rim, tower, assembly of eight blades and the turbine spinning up">
+</div>
+
+</section>
+<section id="blade" data-transition="fade">
+<h2>Five layers on a pipe</h2>
+<div class="cols">
+<div class="col">
+<h3>Layer stack</h3>
+<div class="row"><div class="num c5"><p>5</p></div><div><p class="name">Vacuum bag (tube film)</p><p class="size">width 86 cm</p></div></div>
+<div class="row"><div class="num c4"><p>4</p></div><div><p class="name">Peel ply + flow mesh</p><p class="size">87 × 32 cm</p></div></div>
+<div class="row"><div class="num c3"><p>3</p></div><div><p class="name">Carbon</p><p class="size">85 × 30 cm</p></div></div>
+<div class="row"><div class="num c2"><p>2</p></div><div><p class="name">Core: 3DCore PET 100, 3 mm</p><p class="size">85 × 30 cm</p></div></div>
+<div class="row"><div class="num c1"><p>1</p></div><div><p class="name">Carbon, visible side outside</p><p class="size">85 × 30 cm</p></div></div>
+</div>
+<div class="col">
+<h3>Process</h3>
+<div class="row"><div class="num s"><p>1</p></div><p class="name">Tape and cut carbon, core, peel ply + flow mesh</p></div>
+<div class="row"><div class="num s"><p>2</p></div><p class="name">Lay up the layers on the pipe</p></div>
+<div class="row"><div class="num s"><p>3</p></div><p class="name">Slide into the vacuum bag, attach and seal the hoses, pull the vacuum</p></div>
+<div class="row"><div class="num s"><p>4</p></div><p class="name">Mix the resin in 3 portions of 200 g + 60 g hardener, then infuse</p></div>
+<div class="row"><div class="num s"><p>5</p></div><p class="name">Cure under the infrared lamp</p></div>
+</div>
+</div>
+
+</section>
+<section id="steps1" data-transition="fade">
+<h2>Step by step: prepare the materials</h2>
+<div class="three">
+<div class="step">
+<img src="media/deck/carbon-abkleben.jpg" alt="Carbon fabric taped along the cutting line before cutting">
+<div class="head"><div class="num s"><p>1</p></div><p class="stitle">Tape and cut the carbon</p></div>
+<p class="ssize">2 pieces, 85 × 30 cm</p>
+<p class="stext">Tape the cutting lines so the fabric does not fray.</p>
+</div>
+<div class="step">
+<img src="media/deck/kern-zugeschnitten.jpg" alt="Core material cut to size, with honeycomb pattern">
+<div class="head"><div class="num s"><p>2</p></div><p class="stitle">Cut the core</p></div>
+<p class="ssize">85 × 30 cm</p>
+<p class="stext">3DCore PET 100, 3 mm, the same size as the carbon.</p>
+</div>
+<div class="step">
+<img src="media/deck/abreissgewebe-fliesshilfe.jpg" alt="Roll of peel ply and yellow flow mesh">
+<div class="head"><div class="num s"><p>3</p></div><p class="stitle">Cut peel ply + flow mesh</p></div>
+<p class="ssize">87 × 32 cm</p>
+<p class="stext">One material from the roll, a little larger than the blade.</p>
+</div>
+</div>
+
+</section>
+<section id="steps2" data-transition="fade">
+<h2>Step by step: lay up the layers</h2>
+<div class="three four">
+<div class="step">
+<img src="media/deck/carbon-zugeschnitten.jpg" alt="First carbon layer with taped edge">
+<div class="head"><div class="num c1"><p>1</p></div><p class="stitle">Carbon</p></div>
+<p class="stext">Aligned and without wrinkles on the pipe. This side stays visible outside.</p>
+</div>
+<div class="step">
+<img src="media/deck/soric-rohr.jpg" alt="Core lying on the pipe">
+<div class="head"><div class="num c2"><p>2</p></div><p class="stitle">Core</p></div>
+<p class="stext">Fix it with spray adhesive. It stiffens the blade and lets the resin flow.</p>
+</div>
+<div class="step">
+<img src="media/deck/carbon-auf-kern.jpg" alt="Second carbon layer being laid on top of the core">
+<div class="head"><div class="num c3"><p>3</p></div><p class="stitle">Carbon</p></div>
+<p class="stext">The second layer on top gives strength and stability.</p>
+</div>
+<div class="step">
+<img src="media/deck/abreissgewebe-fliesshilfe.jpg" alt="Peel ply and yellow flow mesh">
+<div class="head"><div class="num c4"><p>4</p></div><p class="stitle">Peel ply + flow mesh</p></div>
+<p class="stext">Spreads the resin. Pulled off after curing.</p>
+</div>
+</div>
+
+</section>
+<section id="steps3" class="dark" data-transition="fade">
+<h2>Step by step: bag, vacuum, infuse</h2>
+<div class="infuse">
+<img class="video" src="media/deck/infusion-poster.jpg" data-video="media/infusion.mp4" alt="Resin infusion from the trial run: the resin flows into the lay-up">
+<div class="dcol">
+<div class="drow"><div class="num s"><p>1</p></div><p>Slide the lay-up into the vacuum bag</p></div>
+<div class="drow"><div class="num s"><p>2</p></div><p>Attach and seal the resin hose and the vacuum hose</p></div>
+<div class="drow"><div class="num s"><p>3</p></div><p>Connect the pump and pull the vacuum</p></div>
+<div class="drow"><div class="num s"><p>4</p></div><p>Mix the resin in 3 portions: 200 g resin + 60 g hardener each</p></div>
+<div class="drow"><div class="num s"><p>5</p></div><p>Open the resin hose and watch the flow front</p></div>
+<div class="drow"><div class="num s"><p>6</p></div><p>Cure under the infrared lamp</p></div>
+</div>
+</div>
+
+</section>
+<section id="trials" class="dark" data-transition="fade">
+<h2>The workshop blade and the finished blade</h2>
+<div class="trials">
+<div class="card" style="--i:1">
+<img src="media/deck/vorversuch-b-schale.jpg" alt="Finished trial blade with 3DCore core">
+<p class="tag">WORKSHOP RECIPE</p>
+<p class="grams">634 g</p>
+<p class="line">Core: 3DCore PET 100, 3 mm</p>
+<p class="line">Resin 600 g + hardener 180 g</p>
+<p class="line">2 carbon layers</p>
+</div>
+<div class="card" style="--i:2">
+<img class="fin" src="media/deck/fertiges-blatt-perspektive.jpg" alt="Finished carbon C-profile blade on a table next to a kitchen scale">
+<p class="tag">FINISHED BLADE</p>
+<p class="grams">545 g</p>
+<p class="line">C profile Ø160 × 800 mm</p>
+<p class="line">Carbon – core – carbon</p>
+<p class="line">8 blades per turbine</p>
+</div>
+</div>
+<p class="note">Weigh your blade and compare it with ours.</p>
+
+</section>
+<section id="closing" class="dark cover" data-transition="fade">
+<img class="cover-img" src="media/deck/vorversuch-b-schale.jpg" alt="Finished carbon half-pipe rotor blade on a workshop table">
+<div class="cover-text">
+<p class="eyebrow">ERASMUS WORKSHOP · 18 NOVEMBER 2026</p>
+<h1>Build a carbon rotor blade</h1>
+<p class="sub">Sandwich construction with vacuum infusion<br>Windmobile · LTEtt</p>
+</div>
+
+</section>
+</div>
+<div id="bar"><div class="g"><a id="back" href="./">← Workshop page</a></div><div class="g"><button id="prev" aria-label="Previous">◀</button><span id="n"></span><button id="next" aria-label="Next">▶</button></div><div class="g"><button id="fs">Full screen (F)</button></div></div>
+<script>(function(){var S=[].slice.call(document.querySelectorAll('#stage>section')),st=document.getElementById('stage'),n=document.getElementById('n'),i=0,t;
+function fit(){var k=Math.min(innerWidth/1920,(innerHeight)/1080);st.style.transform='translate(-50%,-50%) scale('+k+')'}
+function vid(sec,on){sec.querySelectorAll('img[data-video]').forEach(function(im){var v=im._v;if(on&&!v){v=document.createElement('video');v.src=im.getAttribute('data-video');v.poster=im.src;v.muted=true;v.loop=true;v.playsInline=true;v.className=im.className;v.style.cssText=im.style.cssText;v.onclick=function(e){e.stopPropagation();v.paused?v.play():v.pause()};im.after(v);im.style.display='none';im._v=v;}
+ if(v){on?v.play().catch(function(){}):v.pause()}});sec.querySelectorAll('video[data-auto]').forEach(function(v){on?v.play().catch(function(){}):v.pause()})}
+function go(k){k=Math.max(0,Math.min(S.length-1,k));vid(S[i],false);S[i].classList.remove('on');i=k;S[i].classList.add('on');vid(S[i],true);n.textContent=(i+1)+' / '+S.length;try{history.replaceState(null,'','#'+(i+1))}catch(e){}}
+function ui(){document.body.classList.add('ui');clearTimeout(t);t=setTimeout(function(){document.body.classList.remove('ui')},2500)}
+addEventListener('resize',fit);addEventListener('mousemove',ui);
+addEventListener('keydown',function(e){var k=e.key;if(k=='ArrowRight'||k=='PageDown'||k==' '||k=='Enter'){go(i+1);e.preventDefault()}else if(k=='ArrowLeft'||k=='PageUp'||k=='Backspace'){go(i-1);e.preventDefault()}else if(k=='Home')go(0);else if(k=='End')go(S.length-1);else if(k=='f'||k=='F')fs();else if(k=='Escape'&&document.fullscreenElement)document.exitFullscreen()});
+document.getElementById('stage').addEventListener('click',function(e){if(e.target.tagName=='VIDEO')return;go(e.clientX<innerWidth/3?i-1:i+1)});
+function fs(){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen&&document.documentElement.requestFullscreen()}
+document.getElementById('fs').onclick=fs;document.getElementById('prev').onclick=function(){go(i-1)};document.getElementById('next').onclick=function(){go(i+1)};
+var back=document.getElementById('back');back.href=/Workshoptag/.test(location.pathname)||location.hostname=='localhost'?'Windmobile_Workshoptag_18-11.html':'./';
+fit();var h=parseInt(location.hash.slice(1));go(h>0?h-1:0);ui()})();</script></body></html>
